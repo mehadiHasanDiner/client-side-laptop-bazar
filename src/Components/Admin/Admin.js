@@ -31,7 +31,7 @@ const Admin = () => {
                         <Form.File className = "p-1"  id="exampleFormControlFile1"/>
                     </Form.Group>
                 </Form.Row>
-                <Button variant="primary" type="submit">Save  </Button>
+                <Button variant="primary" type="submit">Save Product  </Button>
             </Form>
         </Container>
     );
