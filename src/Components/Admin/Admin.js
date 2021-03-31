@@ -1,9 +1,29 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Col, Container, Button } from 'react-bootstrap';
+import axios from 'axios';
 // import { Button } from 'bootstrap';
 
 const Admin = () => {
+    const onSubmit = (e, data) => {
+        console.log(data)
+        e.preventDefault()
+    };
+    const handleImageUpload = event => {
+        console.log(event.target.files[0])
+        const imageData = new FormData();
+        imageData.set('key', '2e640cfdaa455b72b248d5c6691a6ff3');
+        imageData.append('image', event.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload', imageData)
+          .then(function (response) {
+            console.log(response.data.data.display_url);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+    }
     return (
         <Container>
             <Form className = "p-3" style={{backgroundColor:'#e1e1e1'}}>
@@ -28,10 +48,10 @@ const Admin = () => {
 
                     <Form.Group as={Col} controlId="formGridPassword">
                         <Form.Label><strong>Add Price</strong></Form.Label>
-                        <Form.File className = "p-1"  id="exampleFormControlFile1"/>
+                        <Form.File onChange={handleImageUpload} className = "p-1"  id="exampleFormControlFile1"/>
                     </Form.Group>
                 </Form.Row>
-                <Button variant="primary" type="submit">Save Product  </Button>
+                <Button onSubmit = {onSubmit}  variant="primary" type="submit">Save Product  </Button>
             </Form>
         </Container>
     );
