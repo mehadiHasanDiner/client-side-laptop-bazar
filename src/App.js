@@ -32,7 +32,9 @@ function App() {
       </ul>
 
       <Switch>
+        <Route path="/manageProduct">
         <ManageProduct></ManageProduct>
+        </Route>
         <Route path="/home">
           <Home></Home>
         </Route>

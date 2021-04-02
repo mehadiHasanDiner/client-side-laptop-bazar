@@ -11,7 +11,7 @@ const Home = () => {
 
     return (
         <div>
-            
+            {laptops.length}
         </div>
     );
 };
