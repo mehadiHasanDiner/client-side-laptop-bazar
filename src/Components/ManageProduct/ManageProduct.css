@@ -1,0 +1,31 @@
+.table-heading {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.table-heading li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    background-color: lightgray;
+    font-weight: bold;
+    border: 1px solid gray;
+
+}
+
+.table-row {
+    display: inline-block;
+}
+
+.table-row li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    border: 1px solid gray;
+
+
+}
