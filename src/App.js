@@ -8,6 +8,7 @@ import {
 
 import './App.css';
 import Admin from "./Components/Admin/Admin";
+import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import ManageProduct from "./Components/ManageProduct/ManageProduct";
@@ -16,21 +17,7 @@ import NotFound from "./Components/NotFound/NotFound";
 function App() {
   return (
     <Router>
-      <ul>
-      <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/manageProduct">Manage Product</Link>
-        </li>
-        <li>
-          <Link to="/admin">Admin</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-      </ul>
-
+    <Header></Header>
       <Switch>
         <Route path="/manageProduct">
         <ManageProduct></ManageProduct>
