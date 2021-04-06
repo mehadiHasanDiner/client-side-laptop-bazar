@@ -23,23 +23,26 @@ const ManageProduct = () => {
         i++;
     }
 
-    // const handleDelete = (id) => {
-    //     fetch(`http://localhost:5000/laptops`)
-    //         .then(res => res.json())
-    //         .then(data => setLaptops(data))
-    // }
+    const deleteLaptop = () => {
+        alert('Product of Laptop Deleted')
+        window.location.reload(true);
+    }
 
     const handleDelete = (id) => {
-        console.log(id)
-
         fetch(`http://localhost:5000/deleteLaptop/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ id }),
-        });
+            method: 'DELETE'
+            // headers: {
+            //     'Content-Type': 'application/json',
+            // },
+            // body: JSON.stringify({ id }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                deleteLaptop()
 
+                if (data) {
+                }
+            })
     }
 
     return (
@@ -50,8 +53,8 @@ const ManageProduct = () => {
             }
             <Row>
                 <Col sm={3} className='side-bar'>
-                    <h3>Laptop Bazar</h3>
-                    <Link style={{ color: 'white' }} to="/admin">  <li> <span style={{ color: 'white', padding: "5px" }}><FontAwesomeIcon icon={faPlus} /></span> Add Product </li> </Link>
+                    <h3>Laptop Bazar</h3>                    
+                    <Link style={{ color: 'white' }} to="/addProduct">  <li> <span style={{ color: 'white', padding: "5px" }}><FontAwesomeIcon icon={faPlus} /></span> Add Product </li> </Link>                    
                     <Link style={{ color: 'white' }} to="/manageProduct">  <li> <span style={{ color: 'white', padding: "5px" }}><FontAwesomeIcon icon={faGripHorizontal} /></span> Manage Product </li>  </Link>
                     <li> <span style={{ color: 'white', padding: "5px" }}><FontAwesomeIcon icon={faPencilAlt} /></span> Edit Product</li>
                 </Col>

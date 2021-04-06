@@ -1,9 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Laptop.css'
+import { useHistory } from 'react-router';
 
 const Laptop = (props) => {
-    const {imageURL, brand, productName, price, key} =props.laptop
+    const {imageURL, brand, productName, price, key} =props.laptop;
+    const history = useHistory();
+    const handleBuyNow = (key) => {
+      history.push(`/checkOut/${key}`)
+    }
     return (
         <div className ="col" >
             <div className ="card-style" style={{margin: '10px' }}>
@@ -14,7 +19,7 @@ const Laptop = (props) => {
               <hr/>
             <div className="d-flex justify-content-between">
               <h4 style={{color:'#28a745'}}>Tk. {price}</h4>
-              <button className="btn btn-success">Buy Now</button>
+              <button onClick={() =>handleBuyNow(key)} className="btn btn-success">Buy Now</button>
             </div>
             </div>
             </div>
