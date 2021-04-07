@@ -21,7 +21,7 @@ const Home = () => {
                 </div>
             }
             {
-                laptops.map(laptop => <Laptop laptop={laptop} key={laptop._id}></Laptop>)
+                laptops.map(laptop => <Laptop laptop={laptop}></Laptop>)
             }
         </div>
     );

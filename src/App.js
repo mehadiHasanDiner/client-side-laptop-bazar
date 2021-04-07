@@ -23,22 +23,18 @@ function App() {
 
   return (
     <UserContext.Provider value ={[loggedInUser, setLoggedInUser]}>
-    <h3>Name: {loggedInUser.email}</h3>
-    <img src={loggedInUser.photo} alt=""/>
-    <p>Name : {loggedInUser.name} </p>
-    
     <Router>
     <Header></Header>
       <Switch>
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/admin">
+        <PrivateRoute path="/admin">
           <Admin></Admin>
-        </Route>
-        <Route path="/manageProduct">
+        </PrivateRoute>
+        <PrivateRoute path="/manageProduct">
         <ManageProduct></ManageProduct>
-        </Route>
+        </PrivateRoute>
         <PrivateRoute path="/addProduct">
         <AddProduct></AddProduct>
         </PrivateRoute>

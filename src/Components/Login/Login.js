@@ -43,6 +43,7 @@ const Login = () => {
                 }
                 setUser(signedInUser);
                 setLoggedInUser(signedInUser);
+                history.replace(from);
 
                 // console.log(displayName, photoURL, email);
             }).catch((error) => {
@@ -54,24 +55,7 @@ const Login = () => {
             });
     }
 
-    const handleGoogleSignOut = () => {
-        firebase.auth().signOut()
-            .then(res => {
-                const signedOutUser = {
-                    isSignedIn: false,
-                    name: '',
-                    email: '',
-                    photo: '',
-                    error: '',
-                    success: false
-                }
-                setUser(signedOutUser);
-                console.log(res);
-            })
-            .catch(error => {
 
-            })
-    }
     const handleBlur = (e) => {
         let isFieldValid = true;
 
@@ -183,8 +167,8 @@ const Login = () => {
                 </Form.Group>
 
                 {newUser && <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Confrim Password</Form.Label>
-                    <Form.Control onBlur={handleBlur} type="password" name="confirmPassword" placeholder="Confrim Password" required />
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control onBlur={handleBlur} type="password" name="confirmPassword" placeholder="Confirm Password" required />
                 </Form.Group>}
                 <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Remember Me" />
@@ -194,12 +178,9 @@ const Login = () => {
             </form>
             <div className=" pt-2 pb-4 from" style={{ display: 'grid', alignItems: 'center', justifyContent: 'center', padding: '50px', backgroundColor: '#28a745' }}>
                 <p style={{ textAlign: 'center' }} className="mt-2">Don't have an account? <label style={{ color: 'blue', fontWeight: 'bold', cursor: 'pointer' }}> <input type='checkbox' onChange={() => setNewUser(!newUser)} /> Create Account  </label>, Or</p>
-
-                {
-                    user.isSignedIn ? <div style={{ display: 'grid', alignItems: 'center', justifyContent: 'center' }}><GoogleLoginButton className="form-control" onClick={handleGoogleSignOut}>Sign out from Google</GoogleLoginButton></div>
-                        :
+                        
                         <div style={{ display: 'grid', alignItems: 'center', justifyContent: 'center' }}><GoogleLoginButton className="form-control" onClick={handleGoogleSignIn}>Continue with Google</GoogleLoginButton></div>
-                }
+                
             </div>
             </Col>
         </Container>

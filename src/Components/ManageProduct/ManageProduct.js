@@ -24,25 +24,16 @@ const ManageProduct = () => {
     }
 
     const deleteLaptop = () => {
-        alert('Product of Laptop Deleted')
+        alert('Delete Product of Laptop!')       
         window.location.reload(true);
     }
 
     const handleDelete = (id) => {
         fetch(`http://localhost:5000/deleteLaptop/${id}`, {
             method: 'DELETE'
-            // headers: {
-            //     'Content-Type': 'application/json',
-            // },
-            // body: JSON.stringify({ id }),
         })
             .then(res => res.json())
-            .then(data => {
-                deleteLaptop()
-
-                if (data) {
-                }
-            })
+            .then(data =>deleteLaptop(data))
     }
 
     return (

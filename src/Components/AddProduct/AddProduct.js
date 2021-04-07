@@ -7,7 +7,6 @@ import '../ManageProduct/ManageProduct.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripHorizontal, faPencilAlt, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Link, Route } from 'react-router-dom';
-import ManageProduct from '../ManageProduct/ManageProduct';
 
 
 const AddProduct = () => {
@@ -45,7 +44,9 @@ const AddProduct = () => {
             .catch(function (error) {
                 console.log(error);
             });
-
+    }
+    const handleSaveProduct =() =>{
+        alert("Product Added Successfully")
     }
     return (
         <Container className="mt-3">
@@ -65,12 +66,12 @@ const AddProduct = () => {
                         <Form.Row>
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label><strong>Product Name</strong></Form.Label>
-                                <Form.Control type="text" name="name" defaultValue="Product Name" ref={register} placeholder="Enter Product Name" />
+                                <Form.Control type="text" name="name" defaultValue="" ref={register} placeholder="Enter Product Name" />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPassword">
                                 <Form.Label><strong>Brand Name</strong></Form.Label>
-                                <Form.Control type="text" name="brand" defaultValue="Brand Name" ref={register} placeholder="Enter Brand" />
+                                <Form.Control type="text" name="brand" defaultValue="" ref={register} placeholder="Enter Brand" />
                             </Form.Group>
                         </Form.Row>
 
@@ -85,7 +86,7 @@ const AddProduct = () => {
                                 <Form.File name="exampleRequired" onChange={handleImageUpload} className="p-1" id="exampleFormControlFile1" />
                             </Form.Group>
                         </Form.Row>
-                        <Button variant="primary" type="submit">Save Product  </Button>
+                        <Button onClick = {handleSaveProduct} variant="primary" type="submit">Save Product  </Button>
                     </Form>
                 </Col>
             </Row>
