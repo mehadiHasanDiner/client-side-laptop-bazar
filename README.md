@@ -1,5 +1,5 @@
 Website: Laptop Bazar
-Website Link : https://laptop-bazar-6ddea.web.app/login
+Website Link : https://laptop-bazar-6ddea.web.app
 
 
 ** This is a E-commerce website where you can only buy laptop.
