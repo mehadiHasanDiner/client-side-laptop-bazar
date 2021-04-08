@@ -24,8 +24,8 @@ const ManageProduct = () => {
     }
 
     const deleteLaptop = () => {
-        alert('Delete Product of Laptop!')       
-        window.location.reload(true);
+        alert('Product of Laptop Deleted Successfully!')       
+        // window.location.reload(true);
     }
 
     const handleDelete = (id) => {
