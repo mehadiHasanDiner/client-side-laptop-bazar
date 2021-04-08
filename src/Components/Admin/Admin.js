@@ -1,6 +1,6 @@
 import React, {  } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Container, Button, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import '../ManageProduct/ManageProduct.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

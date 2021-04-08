@@ -1,9 +1,12 @@
 import React from 'react';
+import thanksPic from '../../Components/images/giphy.gif'
 
 const Thanks = () => {
     return (
         <div>
-            <h3 style={{ textAlign: 'center', color: '#7282f5', marginTop: '10px', marginBottom: '20px' }}> Thanks for Purching your Product !!! </h3>
+            <div style={{ display: 'grid', alignItems: 'center', justifyContent: 'center', padding: '50px' }}>
+            <img src={thanksPic} alt=""/>
+            </div>
             
         </div>
     );

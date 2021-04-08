@@ -9,7 +9,7 @@ const Home = () => {
     const [laptops, setLaptops] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/laptops')
+        fetch('https://sleepy-brook-42841.herokuapp.com/laptops')
             .then(res => res.json())
             .then(data => setLaptops(data))
     }, [])

@@ -13,7 +13,7 @@ const ManageProduct = () => {
     const [laptops, setLaptops] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/laptops')
+        fetch('https://sleepy-brook-42841.herokuapp.com/laptops')
             .then(res => res.json())
             .then(data => setLaptops(data))
     }, [])
@@ -29,7 +29,7 @@ const ManageProduct = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteLaptop/${id}`, {
+        fetch(`https://sleepy-brook-42841.herokuapp.com/deleteLaptop/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -70,7 +70,7 @@ const ManageProduct = () => {
                                         <td>{laptop.productName}</td>
                                         <td>{laptop.brand}</td>
                                         <td>{laptop.price}</td>
-                                        <td> <span style={{ backgroundColor: '#0cad24', color: 'white', padding: "3px", borderRadius: '3px' }}><FontAwesomeIcon icon={faPencilAlt} /></span>  <span onClick={() => handleDelete(laptop._id)} style={{ backgroundColor: 'red', color: 'white', padding: "3px", borderRadius: '3px' }}><FontAwesomeIcon icon={faTrashAlt} /></span> </td>
+                                        <td> <span style={{ backgroundColor: '#0cad24', color: 'white', padding: "3px", borderRadius: '3px' }}><FontAwesomeIcon icon={faPencilAlt} /></span>  <span onClick={() => handleDelete(laptop._id)} style={{ backgroundColor: 'red', color: 'white', padding: "3px", borderRadius: '3px', cursor:'pointer' }}><FontAwesomeIcon icon={faTrashAlt} /></span> </td>
                                     </tr>
                                 )}
                         </tbody>

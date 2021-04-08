@@ -15,10 +15,12 @@ const CheckOut = () => {
 
     const { id } = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(setLoggedInUser);
+
     const [laptop, setLaptop] = useState({});
     
     useEffect(() => {
-        fetch(`http://localhost:5000/laptops/${id}`)
+        fetch(`https://sleepy-brook-42841.herokuapp.com/laptops/${id}`)
             .then(res => res.json())
             .then(data => setLaptop(data))
     }, [id])
@@ -48,9 +50,9 @@ const CheckOut = () => {
             brand: laptop.brand,
             imageURL: laptop.imageURL
         }
-        console.log(newLaptopInfo);
+        // console.log(newLaptopInfo);
 
-        fetch('http://localhost:5000/addLaptop', {
+        fetch('https://sleepy-brook-42841.herokuapp.com/addLaptop', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +68,7 @@ const CheckOut = () => {
             })
     }
 
-    let i = 0;
+    let i = 1;
     if (laptop.length > 0) {
         i++;
     }
@@ -122,10 +124,10 @@ const CheckOut = () => {
                 <button onClick={handleBuy} className="btn btn-primary">Add to Cart</button>
 
                 <Link to="/" className="m-3">
-                    <button className="btn btn-info">More One</button>
+                    <button className="btn btn-info">Shop More</button>
                 </Link>
 
-                <Link to="/orderPreview">
+                <Link to="/orderPreviewPass">
                     <button className="btn btn-success">Preview Order</button>
                 </Link>
             </div>

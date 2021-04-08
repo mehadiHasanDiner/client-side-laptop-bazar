@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import './App.css';
 import AddProduct from "./Components/AddProduct/AddProduct";
@@ -14,7 +13,9 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import ManageProduct from "./Components/ManageProduct/ManageProduct";
 import NotFound from "./Components/NotFound/NotFound";
+import OrderPrevieWPass from "./Components/OrderPrevieWPass/OrderPrevieWPass";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Thanks from "./Components/Thanks/Thanks";
 
 export const UserContext = createContext();
 
@@ -43,6 +44,13 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path="/checkOut">
         <CheckOut></CheckOut>
+        </PrivateRoute>
+        <PrivateRoute path="/orderPreviewPass">
+        <OrderPrevieWPass></OrderPrevieWPass>
+        </PrivateRoute>
+
+        <PrivateRoute path="/thanks">
+        <Thanks></Thanks>
         </PrivateRoute>
 
         <Route path="/login">

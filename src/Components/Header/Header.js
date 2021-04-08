@@ -41,6 +41,7 @@ const Header = () => {
                     <Nav>
                         <Link className="text-light nav-link" to ="/home"> Home</Link>
                         <Link className="text-light nav-link" to ="/admin"> Admin</Link>
+                        <Link className="text-light nav-link" to ="/orderPreviewPass"> Order</Link>
                         <Link className="text-light nav-link" to ="/login" onClick={handleSignOut}> {loggedInUser.email?'Logout':'Login'} </Link>
                         <Link className="text-light nav-link" to ="#"> {loggedInUser.photo ? <img style ={{borderRadius:'50%', height:'32px', width:'32px'}} src={loggedInUser.photo} alt=""/> :  <img style ={{borderRadius:'50%', height:'32px', width:'32px'}} src={profilePic} alt=""/>} </Link>
 

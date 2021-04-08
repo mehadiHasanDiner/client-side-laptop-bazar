@@ -25,6 +25,8 @@ const Login = () => {
     })
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggedInUser);
+  
   const history = useHistory();
   const location = useLocation();
   let {from} = location.state || {from: {pathname: "/"}};
@@ -34,7 +36,7 @@ const Login = () => {
         firebase.auth().signInWithPopup(provider)
             .then((res) => {
                 const { displayName, photoURL, email } = res.user;
-                console.log(res.user);
+                // console.log(res.user);
                 const signedInUser = {
                     isSignedIn: true,
                     name: displayName,

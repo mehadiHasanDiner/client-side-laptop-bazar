@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import '../ManageProduct/ManageProduct.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripHorizontal, faPencilAlt, faPlus } from '@fortawesome/free-solid-svg-icons'
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const AddProduct = () => {
@@ -20,7 +20,7 @@ const AddProduct = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url = `http://localhost:5000/addProduct`;
+        const url = `https://sleepy-brook-42841.herokuapp.com/addProduct`;
 
         fetch(url, {
             method: 'POST',
