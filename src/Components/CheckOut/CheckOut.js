@@ -25,7 +25,7 @@ const CheckOut = () => {
             .then(data => setLaptop(data))
     }, [id])
 
-
+    const { productName, price, imageURL, brand } = laptop;
 
     const [selectDate, setSelectDate] = useState({
         orderDate: new Date(),
